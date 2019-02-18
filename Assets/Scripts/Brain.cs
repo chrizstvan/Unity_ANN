@@ -13,17 +13,17 @@ public class Brain : MonoBehaviour
 		
 		List<double> result;
 		
-		for(int i = 0; i < 5000; i++)
+		for(int i = 0; i < 200000; i++)
 		{
 			sumSquareError = 0;
-			result = Train(1, 1, 1);
-			sumSquareError += Mathf.Pow((float)result[0] - 1,2);
-			result = Train(1, 0, 0);
+			result = Train(1, 1, 0);
 			sumSquareError += Mathf.Pow((float)result[0] - 0,2);
-			result = Train(0, 1, 0);
-			sumSquareError += Mathf.Pow((float)result[0] - 0,2);
-            result = Train(0, 0, 1);
+			result = Train(1, 0, 1);
 			sumSquareError += Mathf.Pow((float)result[0] - 1,2);
+			result = Train(0, 1, 1);
+			sumSquareError += Mathf.Pow((float)result[0] - 1,2);
+            result = Train(0, 0, 0);
+			sumSquareError += Mathf.Pow((float)result[0] - 0,2);
 		}
 		Debug.Log("SSE: " + sumSquareError);
 
