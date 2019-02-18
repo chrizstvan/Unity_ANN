@@ -36,6 +36,10 @@ public class ANN{
 		}
 	}
 
+
+    /*
+     * this function for session 1
+    */
 	public List<double> Go(List<double> inputValues, List<double> desiredOutput)
 	{
 		List<double> inputs = new List<double>();
